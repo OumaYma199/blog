@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MotsCles{% endblock %}
+
+{% block body %}
+<section class="home" id="home">
+    <div class="home-text" >
+       <h1>Blog</h1>
+       <span class=".home-subtitle">Catégories</span>
+    </div>
+</section>
+
+    <table class="table">
+        <tbody>
+        
+            <tr>
+                <th>Mot</th>
+                <td>{{ mots_cle.mot }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_mots_cles_index') }}">Retour à la liste</a>
+
+    <a href="{{ path('app_admin_mots_cles_edit', {'id': mots_cle.id}) }}">Modifier</a>
+
+    {{ include('admin_mots_cles/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    align-items: center;
+    font-family: 'Poppins',sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    box-sizing: border-box;
+}
+:root{
+    --container-color: #ffffff;
+    --second-color: #923a00;
+    --text-color: #a54d00;
+    --bg-color: #ffffff;
+    
+}
+.nav-item-left{
+    position: relative;
+    float: center;
+}
+a{
+    text-decoration: none;
+
+}
+#All-Category {
+    color: #ffffff;
+}
+/*     Home       */
+.home{
+    margin: 0px;
+    padding: 10px;
+    width: 100%;
+    min-height: 550px;    
+    background: #603813;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #b29f94, #603813);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #b29f94, #603813); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */        
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat:no-repeat; background-size: cover;
+}
+
+.home-text{
+    color: var( --container-color) ;
+    text-align: center;
+}
+
+.home-title{
+    font-size:3.5rem ;
+}
+
+/*    Category       */
+
+.post-filter{
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    column-gap: 3.5rem;
+    margin-top: 1.4rem !important;
+}
+.filter-item{
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.active-filter{
+    background: var(--second-color);
+    color: #000000;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+/* Posts */
+
+.post-container{
+    margin-top: 68px;
+    margin-left: 68px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,auto));
+    justify-content: right;
+    gap: 6.5rem;   
+
+}
+.card{
+    background-color: var(--bg-color);
+    box-shadow:0 4px 10px #000000;
+    padding: 12px;
+    border-radius: 0.2rem;    
+    width: 24rem;
+}
+.card-img-top{
+    width: 100%;
+    height: 200px;
+    object-fit: cover ;
+    object-position: center;
+    border-radius: 0.5rem;
+}
+.card-body{
+    width: 22rem;
+    height: 14rem;
+}
+.card-title{
+    font-size: 1.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-color);
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-text{
+    font-size:0.9rem; 
+    line-height: 1.5rem;
+    margin: 5px 0 10px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}

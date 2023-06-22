@@ -1,0 +1,17 @@
+
+{% block title %}{% endblock %}
+
+{% block body %}
+   <div class="post-filter ">
+           {% for mots_cle in mots_cles %}
+                <div class="filter.item active-filter ">
+                    <a id="All-Category" href="{{ path('app_mots_cles_show', {'id': mots_cle.id}) }}"><span>{{ mots_cle.mot }}</span></a>
+                </div>
+            {% else %}
+            <tr>
+                <h5>no records found</h5>
+            </tr>
+        {% endfor %}
+        </div>
+
+{% endblock %}

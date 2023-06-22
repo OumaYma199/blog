@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New MotsCles{% endblock %}
+
+{% block body %}
+<section class="home" id="home">
+    <div class="home-text" >
+       <h1>Blog</h1>
+       <span class=".home-subtitle">Créer nouveau Catégory</span>
+    </div>
+</section>
+
+    {{ include('admin_mots_cles/_form.html.twig') }}
+
+    <a href="{{ path('app_admin_mots_cles_index') }}">Retour à la liste</a>
+{% endblock %}

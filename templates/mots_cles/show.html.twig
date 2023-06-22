@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégories{% endblock %}
+
+{% block body %}      
+
+<section class="home" id="home">
+    <div class="home-text" >
+       <h1>Blog</h1>
+       <span class=".home-subtitle">Découvrez, Inspirez-vous et Partagez Votre Passion avec Notre Communauté</span>
+    </div>
+
+
+</section>
+
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+
+    <li class="breadcrumb-item"><a href="{{path('app_home')}}">Catégories</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ mots_cle.mot }}</li>
+  </ol>
+</nav>
+
+   <div class="post-container">
+            {% for article in articles %}
+        <div class="card">
+          <img src="{{asset('assets/images/bleue.jpeg')}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ article.title }}</h5>
+            <p class="card-text">{{ article.content }}                     
+                <a href="{{ path('app_article_show', {'id': article.id}) }}" class="post-detail">Lire plus...</a>
+            </p>
+          </div>
+
+        </div>                
+        {% else %}
+
+                <p >no records found</p>
+        {% endfor %}
+        </div>
+
+    </div>
+    <a href="{{ path('app_home') }}">Retour à la liste</a>
+
+
+{% endblock %}
