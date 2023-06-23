@@ -1,0 +1,64 @@
+
+.center{
+position: absolute;
+top: 50%;
+left: 50%;
+width: 419px;
+   background: white;
+   border-radius: 10px;
+   transform: translate(-50%, -50%) ;
+
+}
+
+.center h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+
+}
+.center form{
+    padding: 0 0 40px ;
+    box-sizing: border-box;
+}
+
+form .txt_field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+    text-align: left;
+}
+.txt_field label{
+    position: absolute;
+    top: 23%;
+    left: 2%;
+    color: #ccc;
+    height: 48px;
+    font-size: 19px;
+    border: none;
+    background: none;
+    outline: none;
+}
+.center button {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(191, 128, 0);
+    width: 45%;
+    height: 45px;
+    border-radius: 31px 33px 29px 29px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}

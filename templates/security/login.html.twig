@@ -1,24 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}authentication{% endblock %}
 
 {% block body %}
+ <div class="center">
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
+   
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <h1>Veuillez saisir vos informations de connexion.</h1>
+    <div class="txt_field">
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
+    </div>
+    <div class="txt_field">
+    <label for="inputPassword">Mot de passe</label>
     <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+    </div>
 
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
@@ -34,9 +35,16 @@
             </label>
         </div>
     #}
+     {% if app.user %}
+        <div class="text-center text-muted mt-5">
+            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
+    <button class="btn " type="submit">
+        connexion
     </button>
-</form>
+    </form>
+    </div>
+
 {% endblock %}
