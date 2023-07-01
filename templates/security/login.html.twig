@@ -24,7 +24,9 @@
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
     >
+   <p class="text-center text-muted mt-5">Vous n'avez pas encore de compte ?<a href="{{path('app_register')}}">Inscrivez-vous ici. </a></p>
 
+     
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
         See https://symfony.com/doc/current/security/remember_me.html

@@ -3,35 +3,40 @@
 {% block title %}Article index{% endblock %}
 
 {% block body %}
-    <h1>Article index</h1>
+    <h1 style="" >Articles</h1>
+    <div style="    
+    position: absolute;
+    top: 13%;
+    left: 96%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    color: black;
+    font-size: 16px;
+    padding: 5px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;" >
+    <a  href="{{ path('app_admin_article_new') }}">Ajouter</a>
+    </div>
+  {% for article in articles %}
+ <div class="card" style="padding: 19px;
+                          border-radius: 2.2rem;
+                          width: 85rem;
+                          margin: 23px 0px 0px 48px;">                      
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for article in articles %}
-            <tr>
-                <td>{{ article.id }}</td>
-                <td>{{ article.title }}</td>
-                <td>{{ article.content }}</td>
-                <td>
+                <div class="body">
+
+                    <h5 class="title">{{ article.title }}</h5>
+                    <p class="text">{{ article.content }}</p>
+                    
                     <a href="{{ path('app_admin_article_show', {'id': article.id}) }}">Afficher</a>
                     <a href="{{ path('app_admin_article_edit', {'id': article.id}) }}">Modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
+                </div>
+    </div>
+     {% else %}
+                <p colspan="4">Aucun enregistrement trouvé</p>
         {% endfor %}
-        </tbody>
-    </table>
 
-    <a href="{{ path('app_admin_article_new') }}">Ajouter</a>
+   
 {% endblock %}

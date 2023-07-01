@@ -15,19 +15,15 @@
 
   <!-- Category -->
 
-    <div class="post-filter container">
-     {% include 'mots_cles/index.html.twig' with mots_cles %}
-    </div>
-    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-  <ol class="breadcrumb">
 
-    <li class="breadcrumb-item"><a href="{{path('app_home')}}">Catégories</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{{ mots_cle.mot }}</li>
-  </ol>
 </nav>
 </section>
   <!-- Articles -->
+  <div class="post-filter container">
+     {% include 'mots_cles/index.html.twig' with mots_cles %}
+    </div>
       <div class="post-container">
+      
             {% for article in articles %}
         <div class="card">
           <img src="{{asset('assets/images/bleue.jpeg')}}" class="card-img-top" alt="...">
